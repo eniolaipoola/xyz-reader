@@ -1,5 +1,6 @@
 package com.example.xyzreader.ui;
 
+import android.animation.Animator;
 import android.app.LoaderManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -18,6 +19,7 @@ import android.text.Html;
 import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import com.example.xyzreader.R;
@@ -190,7 +192,7 @@ public class ArticleListActivity extends AppCompatActivity implements
         }
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         public DynamicHeightNetworkImageView thumbnailView;
         public TextView titleView;
         public TextView subtitleView;
@@ -200,6 +202,17 @@ public class ArticleListActivity extends AppCompatActivity implements
             thumbnailView = view.findViewById(R.id.thumbnail);
             titleView = view.findViewById(R.id.article_title);
             subtitleView = view.findViewById(R.id.article_subtitle);
+            view.setOnClickListener(this);
+            view.getContext().getResources().getColor(R.color.theme_primary);
+        }
+
+        @Override
+        public void onClick(View view) {
+            int finalRadius = Math.max(view.getWidth(), view.getHeight()) / 2;
+            Animator anim = ViewAnimationUtils.createCircularReveal(view, view.getWidth()/2,
+                    view.getHeight()/2, 0, finalRadius);
+            view.setBackgroundColor(view.getResources().getColor(R.color.theme_primary));
+            anim.start();
         }
     }
 }
