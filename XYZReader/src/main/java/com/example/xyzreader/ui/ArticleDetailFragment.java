@@ -275,8 +275,6 @@ public class ArticleDetailFragment extends Fragment implements
         }
 
         mCursor = cursor;
-        Log.d("Debug tag", "mCursor value is " + mCursor);
-        Log.d("Debug tag", "mCursor.moveToFirst() value is " + mCursor.moveToFirst());
         if (mCursor != null && !mCursor.moveToFirst()) {
             Log.e(TAG, "Error reading item detail cursor");
             mCursor.close();
