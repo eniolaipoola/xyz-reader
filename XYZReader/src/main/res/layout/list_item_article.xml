@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="16dp"
+    android:padding="4dp"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?selectableItemBackground">
@@ -29,7 +30,8 @@
             android:paddingTop="16dp"
             android:paddingRight="16dp"
             android:paddingBottom="4dp"
-            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif"
             android:ellipsize="end"
             android:maxLines="4" />
 
@@ -41,7 +43,9 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:paddingBottom="16dp"
-            android:textColor="@color/black"
+            android:fontFamily="sans-serif-light"
+            android:textStyle="italic"
+            android:textSize="13sp"
             android:maxLines="2"
             android:ellipsize="end" />
     </LinearLayout>
