@@ -16,7 +16,7 @@
             android:layout_height="match_parent"
             android:clipToPadding="false"
             android:scrollbarStyle="outsideOverlay"
-            android:paddingTop="116dp"
+            android:paddingTop="90dp"
             android:paddingLeft="@dimen/list_side_margin"
             android:paddingRight="@dimen/list_side_margin"
             android:paddingBottom="28dp" />
@@ -29,22 +29,30 @@
         android:background="?colorPrimary"
         android:elevation="@dimen/frame_elevation">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            app:theme="@style/Theme.AppCompat.NoActionBar"
-            android:layout_marginLeft="@dimen/list_toolbar_side_margin"
-            android:layout_marginRight="@dimen/list_toolbar_side_margin"
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar_layout"
             android:layout_width="match_parent"
-            android:layout_height="?actionBarSize"
-            android:layout_gravity="bottom">
+            android:layout_height="match_parent"
+            android:elevation="@dimen/appbar_elevation">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/logo"
-                android:contentDescription="@string/app_name" />
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_marginLeft="@dimen/list_toolbar_side_margin"
+                android:layout_marginRight="@dimen/list_toolbar_side_margin"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:layout_gravity="bottom"
+                app:popupTheme="@style/Theme.AppCompat.Light">
 
-        </androidx.appcompat.widget.Toolbar>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/logo"
+                    android:contentDescription="@string/app_name" />
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
     </FrameLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
